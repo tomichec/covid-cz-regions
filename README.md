@@ -20,7 +20,10 @@ run the following command:
 python3 regions_cases.py
 ```
 
-## Output example
+## Output Example
+
+The output is printed to standard output as JSON, where the key is the
+name of the region and value represents the number of cases detected.
 
 ```
 {
