@@ -15,13 +15,13 @@ def main():
     data = json.loads(total_regions_data['data-barchart'])
 
     total = 0
-
+    
     print("{")
     for region in data['values']:
         print('\t"%s": %s,' % (region['x'],region['y']))
         total += region['y']
-        n += 1
-    print('\t"%s": %s,' % ("total",total))
+
+    # print('\t"%s": %s,' % ("Total",total))
     print("}")
 
 if (__name__ == "__main__"):

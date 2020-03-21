@@ -13,8 +13,32 @@ Python3, BeautifulSoup library (python3-bs4).
 
 ## Usage
 
+Clone the repository, go to the repository folder in the terminal and
+run the following command:
+
 ```
 python3 regions_cases.py
+```
+
+## Output example
+
+```
+{
+	"Hlavní město Praha": 135,
+	"Středočeský kraj": 118,
+	"Jihočeský kraj": 30,
+	"Plzeňský kraj": 17,
+	"Karlovarský kraj": 32,
+	"Ústecký kraj": 36,
+	"Liberecký kraj": 9,
+	"Královéhradecký kraj": 15,
+	"Pardubický kraj": 22,
+	"Kraj Vysočina": 9,
+	"Jihomoravský kraj": 66,
+	"Olomoucký kraj": 68,
+	"Zlínský kraj": 51,
+	"Moravskoslezský kraj": 79,
+}
 ```
 
 ## Copyright Notice
