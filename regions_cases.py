@@ -3,8 +3,9 @@ from bs4 import BeautifulSoup
 import json
 
 def main():
-    data = get_data()
-    print_data(data)
+    raw = get_data()
+    processed = process_data(raw)
+    print(json.dumps(processed,indent=4, sort_keys=True, ensure_ascii=False))
 
 def get_data():
     url = "https://onemocneni-aktualne.mzcr.cz/covid-19"
@@ -18,18 +19,17 @@ def get_data():
 
     return json.loads(total_regions_data['data-barchart'])
 
-def print_data(data):
+
+def process_data(raw):
     total = 0
-    output_string = "{\n"
-    for region in data['values']:
-        output_string += ('\t"%s": %s,\n' % (region['x'],region['y']))
-        total += region['y']
+    regions_cases = {}
+    for region in raw['values']:
+        region_key   = region['x']
+        region_value = region['y']
+        regions_cases[region_key] = region_value
 
-    # print('\t"%s": %s,' % ("Total",total))
-    output_string = output_string[:-2]
-    output_string += "\n}"
+    return regions_cases
 
-    print(output_string)
 
 if (__name__ == "__main__"):
     main()
