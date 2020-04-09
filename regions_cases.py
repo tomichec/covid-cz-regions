@@ -20,13 +20,16 @@ def get_data():
 
 def print_data(data):
     total = 0
-    print("{")
+    output_string = "{\n"
     for region in data['values']:
-        print('\t"%s": %s,' % (region['x'],region['y']))
+        output_string += ('\t"%s": %s,\n' % (region['x'],region['y']))
         total += region['y']
 
     # print('\t"%s": %s,' % ("Total",total))
-    print("}")
+    output_string = output_string[:-2]
+    output_string += "\n}"
+
+    print(output_string)
 
 if (__name__ == "__main__"):
     main()
